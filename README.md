@@ -1,4 +1,6 @@
-# umi project
+# lorca + umi base demo project
+
+[中文说明/Chinese Documentation](./README_CN.md)
 
 ## Getting Started
 
@@ -14,18 +16,26 @@ Start the dev server,
 $ yarn start
 ```
 
+Start the go dev server, use shell
 
-# 手动构建
 ```bash
-# 创建umi https://umijs.org/zh-CN/docs/getting-started
+go run .
+```
+
+or vscode Shortcut key `F5` when open any go file
+
+
+# By hand create this project
+```bash
+# create umi link to https://umijs.org/docs/getting-started
 yarn create @umijs/umi-app
 yarn
 
-# go 初始化
+# go init
 go mod init jieshao.loract-umi-demo
 go get github.com/zserge/lorca
 
-# 配置 go lorca ... 参考以下
+# config go lorca ... link to
 # https://github.com/zserge/lorca/tree/master/examples
 # https://github.com/cnbattle/lorca-vue-demo
 # https://github.com/erkkah/lorca-ts-react-starter
@@ -34,19 +44,10 @@ go get github.com/zserge/lorca
 go mod vendor
 ```
 
-# 开发
+# build
 ```shell
-# umi 运行
-yarn start
-
-# go 运行 vscode F5
-go run .
-```
-
-# 构建
-```shell
-# 构建资源文件
+# build resource
 yarn build
-# 构建二进制文件
-yarn go:build
+# build binary program
+yarn go:build:win
 ```

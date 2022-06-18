@@ -7,7 +7,7 @@
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "go:build":"go generate && go build --tags withsource"
+    "go:build:win":"go generate && go build --tags withsource -ldflags \"-H windowsgui\""
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
