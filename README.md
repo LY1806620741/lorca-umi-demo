@@ -45,6 +45,8 @@ go run .
 
 # 构建
 ```shell
+# 构建资源文件
 yarn build
+# 构建二进制文件
 yarn go:build
 ```
