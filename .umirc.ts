@@ -4,6 +4,11 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  routes: [{ path: '/', component: '@/pages/index' }],
+  history: { type: 'hash' }, //单页路由问题
+  routes: [
+    { path: '/', component: '@/pages/index' },
+    { path: '/about', component: '@/pages/about' },
+  ],
+  title: 'Demo',
   fastRefresh: {},
 });

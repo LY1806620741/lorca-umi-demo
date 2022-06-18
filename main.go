@@ -7,8 +7,10 @@ import (
 	"github.com/zserge/lorca"
 )
 
+var ui lorca.UI
+
 func main() {
-	ui, _ := lorca.New("", "", 480, 320)
+	ui, _ = lorca.New("", "", 480, 320)
 
 	addr, err := serve()
 	if err != nil {
