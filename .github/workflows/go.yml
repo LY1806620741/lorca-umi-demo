@@ -12,7 +12,7 @@ on:
 jobs:
 
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
 
@@ -31,4 +31,7 @@ jobs:
         npm install yarn
         yarn install
         yarn build
+        go env -w CGO_ENABLED=0 
+        go env -w GOOS=windows
+        go env -w GOARCH=amd64
         yarn go:build:win
