@@ -31,7 +31,9 @@ jobs:
         npm install yarn
         yarn install
         yarn build
-        go env -w CGO_ENABLED=0 
-        go env -w GOOS=windows
-        go env -w GOARCH=amd64
-        yarn go:build:win
+        go generate
+        # go env CGO_ENABLED=0 
+        go env GOOS=windows
+        go env GOARCH=amd64
+        # yarn go:build:win
+        go build --tags withsource -ldflags "-H windowsgui"
