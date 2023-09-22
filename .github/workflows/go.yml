@@ -1,0 +1,46 @@
+# This workflow will build a golang project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
+
+name: Go
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version-file: 'go.mod'
+        
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v3.8.1
+      with:
+          node-version: '16'
+
+    - name: Build
+      run: |
+        npm install yarn
+        yarn install
+        yarn build
+        go generate
+        # go env CGO_ENABLED=0 
+        go env -w GOOS=windows
+        # go env GOARCH=amd64
+        # yarn go:build:win
+        go build --tags withsource -ldflags "-H windowsgui"
+
+    - name: Upload
+      uses: actions/upload-artifact@v3
+      with:
+        name: loract-umi-demo_win_x64
+        path: jieshao.loract-umi-demo.exe
+        retention-days: 3
