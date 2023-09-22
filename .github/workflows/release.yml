@@ -17,7 +17,7 @@ jobs:
         pnpm install
         pnpm build
         pnpm go:build:win
-        mv jieshao.loract-umi-demo.exe loract-umi-demo_win_x64.exe
+        mv "jieshao.loract-umi-demo.exe" "loract-umi-demo_win_x64.exe"
     - name: Upload windows artifact
       uses: actions/github-action-publish-binaries@v2
       env:

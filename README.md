@@ -56,7 +56,7 @@ go mod vendor
 # build
 ```shell
 # build resource
-yarn build
+pnpm build
 # build binary program
-yarn go:build:win
+pnpm go:build:win
 ```

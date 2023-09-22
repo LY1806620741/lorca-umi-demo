@@ -2,9 +2,9 @@
 
 ## 版本信息
 ```
-os: win10
-umi 3.5.26
-node v16.20.2
+os: win11
+Umi v4.0.81
+node v20.6.1
 go1.21.1
 chrome 117.**
 ```
@@ -12,16 +12,16 @@ nodejs总是有版本不兼容问题，敬请注意
 
 ## 开始
 
-安装依赖,
+安装依赖
 
 ```bash
-$ yarn
+$ pnpm install
 ```
 
 开启dev服务,会启动8000端口
 
 ```bash
-$ yarn start
+$ pnpm start
 ```
 
 开启lorca go界面程序,监听8000端口
@@ -36,8 +36,7 @@ go run .
 # 手动构建工程
 ```bash
 # 创建umi 参考 https://umijs.org/zh-CN/docs/getting-started
-yarn create @umijs/umi-app
-yarn
+pnpm dlx create-umi@latest
 
 # go 初始化
 go mod init jieshao.loract-umi-demo
@@ -55,7 +54,7 @@ go mod vendor
 # 构建
 ```shell
 # 构建资源文件
-yarn build
+pnpm build
 # 构建二进制文件
-yarn go:build:win
+pnpm go:build:win
 ```
