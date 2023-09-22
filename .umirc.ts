@@ -1,14 +1,10 @@
-import { defineConfig } from 'umi';
+import { defineConfig } from "umi";
 
 export default defineConfig({
-  nodeModulesTransform: {
-    type: 'none',
-  },
-  history: { type: 'hash' }, //单页路由问题
   routes: [
-    { path: '/', component: '@/pages/index' },
-    { path: '/about', component: '@/pages/about' },
+    { path: "/", component: "index" },
+    { path: "/docs", component: "docs" },
+    { path: "/about", component: "about" },
   ],
-  title: 'Demo',
-  fastRefresh: {},
+  npmClient: 'pnpm',
 });

@@ -11,27 +11,17 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    - name: release
-      uses: actions/create-release@v1
-      id: create_release
-      with:
-        draft: fast
-        prerelease: false
-        release_name: ${{ steps.version.outputs.version }}
-        tag_name: ${{ github.ref }}
-        body_path: CHANGELOG.md
     - name: build-win
       run: |
-        npm install yarn
-        yarn install
-        yarn build
-        go generate
-        go env -w GOOS=windows
-        go build --tags withsource -ldflags "-H windowsgui"
+        npm install pnpm
+        pnpm install
+        pnpm build
+        pnpm go:build:win
+        mv jieshao.loract-umi-demo.exe loract-umi-demo_win_x64.exe
     - name: Upload windows artifact
-      uses: actions/upload-release-asset@v1
-      with:
-        uoload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: jieshao.loract-umi-demo.exe
-        asset_name: jieshao.loract-umi-demo.exe
-        asset_content_tpye: application/vnd.microsoft.porttable-executable
+      uses: actions/github-action-publish-binaries@v2
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          - args: 'loract-umi-demo_win_x64.exe'
+

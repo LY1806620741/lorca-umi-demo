@@ -1,5 +1,4 @@
-import { Link, Helmet } from 'umi';
-import styles from './index.less';
+import { Link } from 'umi';
 
 const goFuncMock = (s: Function) => {
   if (s == undefined) {
@@ -16,7 +15,7 @@ var query = goFuncMock(window.query);
 export default function IndexPage() {
   return (
     <div>
-      <h1 className={styles.title}>首页</h1>
+      <h1>首页</h1>
       <Link to={'/about'}>关于</Link>
       <br />
       <button onClick={() => query('asd')}>调用go</button>

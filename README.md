@@ -5,8 +5,8 @@
 ## version
 ```
 os: win10
-umi 3.5.26
-node v16.20.2
+Umi v4.0.81
+node v20.6.1
 go1.21.1
 chrome 117.**
 ```
@@ -17,13 +17,13 @@ nodejs always has unexpected version problem. please note.
 Install dependencies,
 
 ```bash
-$ yarn
+$ pnpm install
 ```
 
 Start the dev server, bind 8000 port.
 
 ```bash
-$ yarn start
+$ pnpm dev
 ```
 
 Start the go dev server, use shell, show localhost:8000
@@ -38,8 +38,7 @@ or vscode Shortcut key `F5` when open any go file
 # By hand create this project
 ```bash
 # create umi link to https://umijs.org/docs/getting-started
-yarn create @umijs/umi-app
-yarn
+pnpm dlx create-umi@latest
 
 # go init
 go mod init jieshao.loract-umi-demo
