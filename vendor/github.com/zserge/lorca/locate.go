@@ -60,7 +60,7 @@ func LocateChrome() string {
 		}
 		return path
 	}
-  PromptDownload()
+  	PromptDownload()
 	return ""
 }
 
