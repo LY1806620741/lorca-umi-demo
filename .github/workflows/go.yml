@@ -37,3 +37,11 @@ jobs:
         # go env GOARCH=amd64
         # yarn go:build:win
         go build --tags withsource -ldflags "-H windowsgui"
+        mv 
+
+    - name: Upload
+      uses: actions/upload-artifact@v3
+      with:
+        name: loract-umi-demo_win_x64
+        path: jieshao.loract-umi-demo.exe
+        retention-days: 3
