@@ -24,7 +24,7 @@ jobs:
     - name: Setup Node.js environment
       uses: actions/setup-node@v3.8.1
       with:
-          node-version: '12'
+          node-version: '16'
 
     - name: Build
       run: |
@@ -33,7 +33,7 @@ jobs:
         yarn build
         go generate
         # go env CGO_ENABLED=0 
-        go env GOOS=windows
-        go env GOARCH=amd64
+        #go env GOOS=windows
+        #go env GOARCH=amd64
         # yarn go:build:win
-        go build --tags withsource -ldflags "-H windowsgui"
+        #go build --tags withsource -ldflags "-H windowsgui"
