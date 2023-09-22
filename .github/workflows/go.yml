@@ -33,7 +33,7 @@ jobs:
         yarn build
         go generate
         # go env CGO_ENABLED=0 
-        #go env GOOS=windows
-        #go env GOARCH=amd64
+        go env -w GOOS=windows
+        # go env GOARCH=amd64
         # yarn go:build:win
-        #go build --tags withsource -ldflags "-H windowsgui"
+        go build --tags withsource -ldflags "-H windowsgui"
