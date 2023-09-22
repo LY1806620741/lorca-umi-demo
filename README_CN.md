@@ -1,5 +1,15 @@
 # lorca + umi 基础示例 工程
 
+## 版本信息
+```
+os: win10
+umi 3.5.26
+node v16.20.2
+go1.21.1
+chrome 117.**
+```
+nodejs总是有版本不兼容问题，敬请注意
+
 ## 开始
 
 安装依赖,
@@ -8,13 +18,13 @@
 $ yarn
 ```
 
-开启dev服务,
+开启dev服务,会启动8000端口
 
 ```bash
 $ yarn start
 ```
 
-开启lorca go界面程序
+开启lorca go界面程序,监听8000端口
 
 ```bash
 go run .

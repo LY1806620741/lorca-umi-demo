@@ -2,6 +2,16 @@
 
 [中文说明/Chinese Documentation](./README_CN.md)
 
+## version
+```
+os: win10
+umi 3.5.26
+node v16.20.2
+go1.21.1
+chrome 117.**
+```
+nodejs always has unexpected version problem. please note.
+
 ## Getting Started
 
 Install dependencies,
@@ -10,13 +20,13 @@ Install dependencies,
 $ yarn
 ```
 
-Start the dev server,
+Start the dev server, bind 8000 port.
 
 ```bash
 $ yarn start
 ```
 
-Start the go dev server, use shell
+Start the go dev server, use shell, show localhost:8000
 
 ```bash
 go run .
