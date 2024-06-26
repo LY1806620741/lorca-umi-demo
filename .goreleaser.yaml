@@ -28,10 +28,12 @@ builds:
       - darwin
     flags:
       - -tags=withsource
-    overrides:
-      - goos: windows
-      - ldflags:
-        - -H windowsgui
+    ldflags:
+      - -s -w 
+      - >
+        {{- if eq .Os "windows" }}
+          {{- if eq .Arch "amd64" }}-H windowsgui{{- end }}
+        {{- end }}
 
 archives:
   - format: tar.gz
