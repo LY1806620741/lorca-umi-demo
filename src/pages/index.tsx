@@ -19,6 +19,7 @@ export default function IndexPage() {
       <Link to={'/about'}>关于</Link>
       <br />
       <button onClick={() => query('asd')}>调用go</button>
+      <div id='callbackPrint'></div>
     </div>
   );
 }
