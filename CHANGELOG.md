@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.1.1] - 2023-09-22
+1. 使用goreleaser进行构建
+2. 增加回调计数
+
 ## [1.1.0] - 2023-09-22
 1. umi4
 

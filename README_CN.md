@@ -15,6 +15,7 @@ nodejs总是有版本不兼容问题，敬请注意
 安装依赖
 
 ```bash
+$ npm install -g pnpm
 $ pnpm install
 ```
 
@@ -56,5 +57,11 @@ go mod vendor
 # 构建资源文件
 pnpm build
 # 构建二进制文件
-pnpm go:build:win
+pnpm go:build
+```
+
+# 打包版本
+```shell
+go install github.com/goreleaser/goreleaser/v2@latest
+goreleaser release --clean --snapshot
 ```

@@ -17,6 +17,7 @@ nodejs always has unexpected version problem. please note.
 Install dependencies,
 
 ```bash
+$ npm install pnpm
 $ pnpm install
 ```
 
@@ -58,5 +59,11 @@ go mod vendor
 # build resource
 pnpm build
 # build binary program
-pnpm go:build:win
+pnpm go:build
+```
+
+# release
+```shell
+go install github.com/goreleaser/goreleaser/v2@latest
+goreleaser release --clean --snapshot
 ```
