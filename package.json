@@ -7,8 +7,7 @@
     "postinstall": "umi setup",
     "setup": "umi setup",
     "start": "npm run dev",
-    "go:build": "go run gen.go && go build --tags withsource",
-    "go:build:wingui": "go run gen.go && go build --tags withsource  -ldflags \"-H windowsgui\""
+    "go:build": "goreleaser build --single-target --snapshot"
   },
   "dependencies": {
     "umi": "^4.0.81"
